@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect x="28" y="28" width="744" height="744" stroke="#D91919" stroke-width="8"/>
+  <path d="M100 116H700" stroke="#111111" stroke-width="12"/>
+  <path d="M400 88V722" stroke="#111111" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M88 400H712" stroke="#111111" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#111111" fill-opacity=".05" stroke="#111111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M384 74H416V218H384Z" stroke-width="8"/>
+    <rect x="374" y="40" width="52" height="36" rx="16" stroke-width="8"/>
+    <circle cx="400" cy="28" r="15" stroke-width="8"/>
+    <path d="M400 146C352 158 324 210 324 252C324 304 358 348 356 412C354 474 315 534 320 610C324 674 357 713 400 736C443 713 476 674 480 610C485 534 446 474 444 412C442 348 476 304 476 252C476 210 448 158 400 146Z" stroke-width="10"/>
+    <path d="M352 332C362 348 362 376 350 394" stroke="#D91919" stroke-width="7"/>
+    <path d="M448 332C438 348 438 376 450 394" stroke="#D91919" stroke-width="7"/>
+    <path d="M352 420C362 438 362 466 350 484" stroke="#D91919" stroke-width="7"/>
+    <path d="M448 420C438 438 438 466 450 484" stroke="#D91919" stroke-width="7"/>
+    <path d="M360 510L400 486L440 510L400 562Z" stroke-width="8"/>
+    <path d="M348 562H452" stroke-width="8"/>
+    <path d="M380 218V560" stroke-width="2"/>
+    <path d="M388 218V560" stroke-width="2"/>
+    <path d="M396 218V560" stroke-width="2"/>
+    <path d="M404 218V560" stroke-width="2"/>
+    <path d="M412 218V560" stroke-width="2"/>
+    <path d="M420 218V560" stroke-width="2"/>
+    <path d="M374 232H426" stroke-width="2"/>
+    <path d="M374 258H426" stroke-width="2"/>
+    <path d="M374 284H426" stroke-width="2"/>
+    <path d="M374 310H426" stroke-width="2"/>
+    <path d="M374 336H426" stroke-width="2"/>
+    <path d="M374 362H426" stroke-width="2"/>
+  </g>
+  <rect x="86" y="86" width="628" height="628" filter="url(#grain)"/>
+</svg>

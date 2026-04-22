@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect x="28" y="28" width="744" height="744" stroke="#D91919" stroke-width="8"/>
+  <path d="M102 116H698" stroke="#111111" stroke-width="12"/>
+  <path d="M400 88V712" stroke="#111111" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M88 400H712" stroke="#111111" stroke-opacity=".18" stroke-width="2"/>
+  <g fill="#111111" fill-opacity=".05" stroke="#111111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M176 504H524L642 414V244H294L176 334Z" stroke-width="10"/>
+    <path d="M294 244L642 244L576 166L240 166Z" stroke="#D91919" stroke-width="8"/>
+    <path d="M226 504V640" stroke-width="8"/>
+    <path d="M492 504V640" stroke-width="8"/>
+    <path d="M610 414V640" stroke-width="8"/>
+    <path d="M214 530H474V582H214Z" stroke-width="8"/>
+    <path d="M240 530V582" stroke-width="2"/>
+    <path d="M266 530V582" stroke-width="2"/>
+    <path d="M292 530V582" stroke-width="2"/>
+    <path d="M318 530V582" stroke-width="2"/>
+    <path d="M344 530V582" stroke-width="2"/>
+    <path d="M370 530V582" stroke-width="2"/>
+    <path d="M396 530V582" stroke-width="2"/>
+    <path d="M422 530V582" stroke-width="2"/>
+    <path d="M448 530V582" stroke-width="2"/>
+    <path d="M308 284L584 284" stroke-width="2"/>
+    <path d="M292 312L560 312" stroke-width="2"/>
+    <path d="M272 340L536 340" stroke-width="2"/>
+    <path d="M252 368L512 368" stroke-width="2"/>
+    <path d="M232 396L488 396" stroke-width="2"/>
+  </g>
+  <rect x="86" y="86" width="628" height="628" filter="url(#grain)"/>
+</svg>
