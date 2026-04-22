@@ -8,6 +8,8 @@ const detailTitle = document.querySelector("#detail-title");
 const detailContentNode = document.querySelector("#detail-content");
 const detailCloseButton = document.querySelector(".detail-close");
 const detailTriggers = document.querySelectorAll(".detail-trigger");
+const afterlifePlayButtons = document.querySelectorAll(".afterlife-play");
+const afterlifeAudioNodes = document.querySelectorAll(".afterlife-player audio");
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const overlayDelay = prefersReducedMotion.matches ? 0 : 220;
@@ -1601,6 +1603,50 @@ detailTriggers.forEach((trigger) => {
       event.preventDefault();
       openDetail(trigger.dataset.detail, trigger);
     }
+  });
+});
+
+const syncAfterlifePlayState = (button, audio) => {
+  const textNode = button.querySelector(".afterlife-play-text");
+  const isPlaying = !audio.paused && !audio.ended;
+
+  button.classList.toggle("is-playing", isPlaying);
+
+  if (textNode) {
+    textNode.textContent = isPlaying ? "PAUSE EXAMPLE" : "PLAY EXAMPLE";
+  }
+};
+
+afterlifePlayButtons.forEach((button) => {
+  const audio = document.getElementById(button.dataset.audioTarget);
+
+  if (!(audio instanceof HTMLAudioElement)) {
+    return;
+  }
+
+  const sync = () => syncAfterlifePlayState(button, audio);
+
+  sync();
+
+  button.addEventListener("click", () => {
+    if (audio.paused || audio.ended) {
+      afterlifeAudioNodes.forEach((otherAudio) => {
+        if (otherAudio !== audio) {
+          otherAudio.pause();
+        }
+      });
+
+      audio.play().catch(() => {
+        sync();
+      });
+      return;
+    }
+
+    audio.pause();
+  });
+
+  ["play", "pause", "ended", "emptied"].forEach((eventName) => {
+    audio.addEventListener(eventName, sync);
   });
 });
 

@@ -557,9 +557,10 @@ h2 {
 .afterlife-visual {
   position: relative;
   margin: -1rem -1rem 0;
-  padding: 1rem;
+  padding: 0;
   display: grid;
-  place-items: center;
+  place-items: stretch;
+  overflow: hidden;
   background:
     linear-gradient(180deg, rgba(217, 25, 25, 0.11), transparent 24%),
     linear-gradient(90deg, rgba(0, 0, 0, 0.06), transparent 40%),
@@ -569,11 +570,13 @@ h2 {
 }
 
 .afterlife-hero-image {
-  min-height: 21rem;
+  min-height: 0;
+  aspect-ratio: 1.55 / 1;
 }
 
 .afterlife-visual {
-  min-height: 17rem;
+  min-height: 0;
+  aspect-ratio: 1.08 / 1;
 }
 
 .afterlife-hero-image::before,
@@ -605,26 +608,100 @@ h2 {
 
 .afterlife-hero-image img,
 .afterlife-visual img {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 1;
   display: block;
   width: 100%;
-  min-height: 15rem;
+  height: 100%;
+  min-height: 0;
   object-fit: cover;
+  object-position: center;
   filter: contrast(1.04) saturate(0.88) sepia(0.04);
   mix-blend-mode: multiply;
   opacity: 0.96;
 }
 
 .afterlife-hero-image img {
-  min-height: 19rem;
+  object-position: center 46%;
 }
 
+.afterlife-player {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  gap: 0.7rem;
+  align-content: end;
+  padding: 3.9rem 1rem 1rem;
+  background:
+    linear-gradient(180deg, rgba(16, 16, 16, 0), rgba(16, 16, 16, 0.12) 25%, rgba(16, 16, 16, 0.82) 100%);
+}
+
+.afterlife-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-self: start;
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--paper-alt);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.afterlife-play:hover,
+.afterlife-play:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.afterlife-play:focus-visible {
+  outline: 2px solid var(--paper-alt);
+  outline-offset: -2px;
+}
+
+.afterlife-play.is-playing {
+  background: transparent;
+  border-color: var(--paper-alt);
+}
+
+.afterlife-play-glyph {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 0.42rem solid transparent;
+  border-bottom: 0.42rem solid transparent;
+  border-left: 0.72rem solid currentColor;
+}
+
+.afterlife-play.is-playing .afterlife-play-glyph {
+  width: 0.72rem;
+  height: 0.72rem;
+  border: 0;
+  background:
+    linear-gradient(
+      90deg,
+      currentColor 0 32%,
+      transparent 32% 68%,
+      currentColor 68% 100%
+    );
+}
+
+.afterlife-audio-shell,
 .afterlife-audio {
   display: grid;
   gap: 0.65rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(16, 16, 16, 0.24);
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(245, 241, 232, 0.38);
 }
 
 .afterlife-audio-label,
@@ -634,11 +711,18 @@ h2 {
   letter-spacing: 0.12em;
 }
 
+.afterlife-audio-label {
+  color: var(--paper-alt);
+}
+
+.afterlife-audio-shell audio,
 .afterlife-audio audio,
 .detail-audio audio {
   width: 100%;
   min-height: 2.85rem;
-  filter: grayscale(0.92) contrast(1.05) sepia(0.08);
+  opacity: 0.94;
+  accent-color: var(--accent);
+  filter: grayscale(0.28) contrast(1.05) sepia(0.02);
 }
 
 .afterlife-actions {
@@ -651,7 +735,8 @@ h2 {
 .detail-media-frame {
   position: relative;
   overflow: hidden;
-  min-height: 15rem;
+  min-height: 0;
+  aspect-ratio: 1.25 / 1;
   margin: 0;
   background:
     linear-gradient(180deg, rgba(217, 25, 25, 0.1), transparent 24%),
@@ -661,9 +746,9 @@ h2 {
 }
 
 .detail-media-frame img {
+  height: 100%;
   display: block;
   width: 100%;
-  min-height: 15rem;
   object-fit: cover;
   filter: contrast(1.04) saturate(0.88) sepia(0.04);
   mix-blend-mode: multiply;
@@ -1098,15 +1183,46 @@ h2 {
   .afterlife-hero-image,
   .afterlife-visual,
   .detail-media-frame {
-    min-height: 14rem;
+    min-height: 0;
   }
 
   .instrument-visual img,
   .afterlife-hero-image img,
   .afterlife-visual img,
   .detail-media-frame img {
-    min-height: 14rem;
-    max-height: 14rem;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .afterlife-hero-image {
+    aspect-ratio: 1.15 / 1;
+  }
+
+  .afterlife-visual {
+    aspect-ratio: 1 / 1.12;
+  }
+
+  .afterlife-hero-image img,
+  .afterlife-visual img {
+    object-fit: contain;
+  }
+
+  .detail-media-frame {
+    aspect-ratio: 1.02 / 1;
+  }
+
+  .detail-media-frame img {
+    object-fit: contain;
+  }
+
+  .afterlife-player {
+    gap: 0.6rem;
+    padding: 4.4rem 0.8rem 0.8rem;
+  }
+
+  .afterlife-play {
+    width: 100%;
+    justify-content: center;
   }
 
   .lede,
