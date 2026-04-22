@@ -121,6 +121,8 @@ dd,
 .timeline-entry p,
 .work-card p,
 .instrument-card p,
+.afterlife-card p,
+.afterlife-signal p,
 .protocol-card p {
   font-size: 0.78rem;
   line-height: 1.45;
@@ -509,6 +511,169 @@ h2 {
   opacity: 0.94;
 }
 
+.afterlife-overview {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.afterlife-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.afterlife-signal,
+.afterlife-ledger,
+.afterlife-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.afterlife-signal {
+  min-height: 25rem;
+}
+
+.afterlife-signal h3,
+.afterlife-card h3 {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.afterlife-ledger,
+.afterlife-card {
+  min-height: 20rem;
+}
+
+.afterlife-ledger dl {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.afterlife-ledger div {
+  display: grid;
+  gap: 0.3rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(16, 16, 16, 0.25);
+}
+
+.afterlife-hero-image,
+.afterlife-visual {
+  position: relative;
+  margin: -1rem -1rem 0;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(180deg, rgba(217, 25, 25, 0.11), transparent 24%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06), transparent 40%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.08), transparent 42%),
+    var(--paper);
+  border-bottom: 1px solid rgba(16, 16, 16, 0.35);
+}
+
+.afterlife-hero-image {
+  min-height: 21rem;
+}
+
+.afterlife-visual {
+  min-height: 17rem;
+}
+
+.afterlife-hero-image::before,
+.afterlife-hero-image::after,
+.afterlife-visual::before,
+.afterlife-visual::after {
+  content: "";
+  position: absolute;
+  background: rgba(16, 16, 16, 0.16);
+}
+
+.afterlife-hero-image::before,
+.afterlife-visual::before {
+  left: 50%;
+  top: 1rem;
+  bottom: 1rem;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.afterlife-hero-image::after,
+.afterlife-visual::after {
+  left: 1rem;
+  right: 1rem;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.afterlife-hero-image img,
+.afterlife-visual img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  min-height: 15rem;
+  object-fit: cover;
+  filter: contrast(1.04) saturate(0.88) sepia(0.04);
+  mix-blend-mode: multiply;
+  opacity: 0.96;
+}
+
+.afterlife-hero-image img {
+  min-height: 19rem;
+}
+
+.afterlife-audio {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(16, 16, 16, 0.24);
+}
+
+.afterlife-audio-label,
+.detail-caption {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.afterlife-audio audio,
+.detail-audio audio {
+  width: 100%;
+  min-height: 2.85rem;
+  filter: grayscale(0.92) contrast(1.05) sepia(0.08);
+}
+
+.afterlife-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: auto;
+}
+
+.detail-media-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 15rem;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(217, 25, 25, 0.1), transparent 24%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06), transparent 40%),
+    var(--paper-alt);
+  border: 1px solid rgba(16, 16, 16, 0.18);
+}
+
+.detail-media-frame img {
+  display: block;
+  width: 100%;
+  min-height: 15rem;
+  object-fit: cover;
+  filter: contrast(1.04) saturate(0.88) sepia(0.04);
+  mix-blend-mode: multiply;
+}
+
+.detail-audio {
+  display: grid;
+  gap: 0.7rem;
+}
+
 .quote-block {
   min-height: 12rem;
   display: grid;
@@ -778,11 +943,13 @@ h2 {
   .card-grid,
   .works-grid,
   .instrument-grid,
+  .afterlife-grid,
   .protocol {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .timeline-overview {
+  .timeline-overview,
+  .afterlife-overview {
     grid-template-columns: 1fr;
   }
 
@@ -832,8 +999,10 @@ h2 {
   .card-grid,
   .works-grid,
   .timeline-overview,
+  .afterlife-overview,
   .instrument-overview,
   .instrument-grid,
+  .afterlife-grid,
   .protocol,
   .footer {
     grid-template-columns: 1fr;
@@ -906,6 +1075,8 @@ h2 {
   .stat-card h3,
   .work-card h3,
   .instrument-card h3,
+  .afterlife-signal h3,
+  .afterlife-card h3,
   .protocol-card h3,
   .timeline-entry h3 {
     font-size: 1.15rem;
@@ -915,16 +1086,26 @@ h2 {
   .instrument-summary,
   .instrument-ledger,
   .instrument-card,
+  .afterlife-signal,
+  .afterlife-ledger,
+  .afterlife-card,
   .timeline-core,
   .timeline-ledger {
     min-height: auto;
   }
 
-  .instrument-visual {
+  .instrument-visual,
+  .afterlife-hero-image,
+  .afterlife-visual,
+  .detail-media-frame {
     min-height: 14rem;
   }
 
-  .instrument-visual img {
+  .instrument-visual img,
+  .afterlife-hero-image img,
+  .afterlife-visual img,
+  .detail-media-frame img {
+    min-height: 14rem;
     max-height: 14rem;
   }
 

@@ -1265,6 +1265,196 @@ const detailContent = {
       </div>
     `,
   },
+  "afterlives-overview": {
+    kicker: "[ DOSSIER / AFTERLIVES ]",
+    sector: "MODERN SIGNAL / TRANSLATION ENGINE",
+    title: "BACH AFTER 1750 / NOT A RELIC, A TRANSFERABLE SYSTEM",
+    body: `
+      <p class="detail-intro">
+        Bach survives because the music carries procedures that can be moved into new sound worlds
+        without collapsing: line, sequence, bass logic, dialogue, and formal pressure.
+      </p>
+      <div class="detail-layout">
+        <div class="detail-stack">
+          <section class="detail-block">
+            <p class="label">Signal image</p>
+            <figure class="detail-media-frame">
+              <img
+                src="assets/afterlife-signal.png"
+                alt="Photorealistic editorial still life of Bach score pages feeding into modern audio hardware"
+              />
+            </figure>
+            <p class="detail-caption">
+              ARCHIVE PAGES BECOME MODERN SIGNAL PATH: SCORE -> STUDIO -> NEW GENRE GRAMMARS.
+            </p>
+          </section>
+          <section class="detail-block">
+            <p class="label">What survives</p>
+            <h3>The instrumentation can change radically while the compositional load-bearing members remain legible.</h3>
+            <p>
+              Jazz can absorb Bach through harmonic extension, rhythmic looseness, and ensemble conversation.
+              Metal can absorb Bach through attack, doubled line-work, riff pressure, and amplified contrast.
+              The point is not that every adaptation is good. The point is that Bach gives later musicians unusually sturdy material to test.
+            </p>
+            <div class="detail-code">SURVIVES / COUNTERPOINT / BASS MOTION / SEQUENCE / DIALOGUE / CADENTIAL DRIVE\nTRANSLATES / SWING / DISTORTION / AMPLIFICATION / STUDIO COLOR / GENRE ATTACK</div>
+          </section>
+          <section class="detail-block">
+            <p class="label">Reading rule</p>
+            <p>
+              Treat these local examples as evidence of transmission, not novelty stunts. They show how Bach can keep generating structure
+              after the original instruments, liturgical settings, and performance norms have changed.
+            </p>
+          </section>
+        </div>
+        <aside class="detail-aside">
+          <section class="detail-block">
+            <p class="label">Open next</p>
+            <div class="detail-related">
+              ${pill("bwv31-jazz", "BWV 31 / Jazz")}
+              ${pill("bwv1060-metal", "BWV 1060 / Metal")}
+              ${pill("year-1750", "1750")}
+            </div>
+          </section>
+          <section class="detail-block">
+            <p class="label">Fast thesis</p>
+            <p>
+              Bach remains current because his works operate as finished compositions and as reusable structural vocabularies.
+            </p>
+          </section>
+        </aside>
+      </div>
+    `,
+  },
+  "bwv31-jazz": {
+    kicker: "[ DOSSIER / BWV 31 ]",
+    sector: "AFTERLIVES / JAZZ TRANSLATION",
+    title: "BWV 31 AS JAZZ / SACRED MATERIAL, REHARMONIZED AIR PRESSURE",
+    body: `
+      <p class="detail-intro">
+        This local reinterpretation turns Bach's cantata-derived material into a jazz object:
+        more harmonic breath, more flexible time, but still a Bach-shaped pressure path underneath.
+      </p>
+      <div class="detail-layout">
+        <div class="detail-stack">
+          <section class="detail-block">
+            <p class="label">Visual field</p>
+            <figure class="detail-media-frame">
+              <img
+                src="assets/bwv31-jazz.png"
+                alt="Photorealistic editorial image of a jazz reinterpretation environment for Bach BWV 31"
+              />
+            </figure>
+            <p class="detail-caption">
+              PIANO / BASS / DRUMS / BRASS COLOR: BACH'S MATERIAL MOVED INTO A JAZZ ROOM.
+            </p>
+          </section>
+          <section class="detail-block">
+            <p class="label">Playback</p>
+            <div class="detail-audio">
+              <audio controls preload="none" src="assets/bwv31.mp3"></audio>
+              <p class="detail-caption">LOCAL USER-SUPPLIED EXAMPLE / MODERN JAZZ READING OF BWV 31.</p>
+            </div>
+          </section>
+          <section class="detail-block">
+            <p class="label">What changes</p>
+            <h3>The liturgical surface loosens into jazz phrasing, but Bach's line-logic still organizes the room.</h3>
+            <p>
+              Jazz translation usually works by opening the harmony, redistributing accent, and giving the ensemble more conversational elasticity.
+              That can make Bach feel less carved in stone and more respirational. What matters is whether the version keeps directional force:
+              voice-leading, periodic return, and rhetorical arrival.
+            </p>
+          </section>
+          <section class="detail-block">
+            <p class="label">What to listen for</p>
+            <ul class="detail-list">
+              <li>Whether the bass still behaves like a structural guide rather than mere atmosphere.</li>
+              <li>How reharmonization thickens color without erasing the underlying contour.</li>
+              <li>Whether rhythmic looseness clarifies phrase rhetoric or merely softens it.</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="detail-aside">
+          <section class="detail-block">
+            <p class="label">Fast read</p>
+            <div class="detail-code">BACH MATERIAL -> JAZZ HARMONY / FLEXIBLE TIME / ENSEMBLE DIALOGUE -> NEW COLOR, SAME PRESSURE MAP</div>
+          </section>
+          <section class="detail-block">
+            <p class="label">Open next</p>
+            <div class="detail-related">
+              ${pill("afterlives-overview", "Afterlives")}
+              ${pill("continuo", "Continuo")}
+              ${pill("listen-bass", "Track the Bass")}
+            </div>
+          </section>
+        </aside>
+      </div>
+    `,
+  },
+  "bwv1060-metal": {
+    kicker: "[ DOSSIER / BWV 1060 ]",
+    sector: "AFTERLIVES / METAL TRANSLATION",
+    title: "BWV 1060 AS HEAVY METAL / DOUBLE CONCERTO BECOMES TWIN-GUITAR FORCE",
+    body: `
+      <p class="detail-intro">
+        BWV 1060 already contains paired lead logic. In a metal setting that dialogue can become a twin-guitar machine
+        without losing the antagonistic elegance of the source.
+      </p>
+      <div class="detail-layout">
+        <div class="detail-stack">
+          <section class="detail-block">
+            <p class="label">Visual field</p>
+            <figure class="detail-media-frame">
+              <img
+                src="assets/bwv1060-metal.png"
+                alt="Photorealistic editorial image of a heavy metal reinterpretation environment for Bach BWV 1060"
+              />
+            </figure>
+            <p class="detail-caption">
+              TWIN GUITARS / DRUM KIT / AMP WALL: CONCERTO DIALOGUE TRANSLATED INTO AMPLIFIED IMPACT.
+            </p>
+          </section>
+          <section class="detail-block">
+            <p class="label">Playback</p>
+            <div class="detail-audio">
+              <audio controls preload="none" src="assets/bwv1060.mp3"></audio>
+              <p class="detail-caption">LOCAL USER-SUPPLIED EXAMPLE / HEAVY METAL READING OF BWV 1060.</p>
+            </div>
+          </section>
+          <section class="detail-block">
+            <p class="label">Why metal works here</p>
+            <h3>Distortion thickens the surface, but the real compatibility comes from attack, repetition, and opposed lead lines.</h3>
+            <p>
+              Metal is often strong at building pressure through riff recursion, synchronized strike, and sharpened timbral edges.
+              Bach's concerto logic can survive there because the music already knows how to stage contest, relay, and return.
+              Amplification changes the material feel, but it can also expose the skeleton more brutally.
+            </p>
+          </section>
+          <section class="detail-block">
+            <p class="label">What to listen for</p>
+            <ul class="detail-list">
+              <li>How the two lead strands behave like soloists even when tone becomes heavier.</li>
+              <li>Whether the drum attack reinforces cadential shape or flattens it.</li>
+              <li>How distortion changes perceived counterpoint from transparency to massed friction.</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="detail-aside">
+          <section class="detail-block">
+            <p class="label">Fast read</p>
+            <div class="detail-code">DOUBLE CONCERTO / CALL + RESPONSE / RETURN PATTERNS -> METAL ATTACK / TWIN LEADS / TIMBRAL MASS</div>
+          </section>
+          <section class="detail-block">
+            <p class="label">Open next</p>
+            <div class="detail-related">
+              ${pill("afterlives-overview", "Afterlives")}
+              ${pill("counterpoint", "Counterpoint")}
+              ${pill("listen-cadence", "Cadence")}
+            </div>
+          </section>
+        </aside>
+      </div>
+    `,
+  },
   "year-1750": {
     kicker: "[ DOSSIER / 1750 ]",
     sector: "CODA / AFTERLIFE",
@@ -1307,6 +1497,7 @@ const detailContent = {
           <section class="detail-block">
             <p class="label">Open next</p>
             <div class="detail-related">
+              ${pill("afterlives-overview", "Afterlives")}
               ${pill("bach-core", "Why Bach Dominates")}
               ${pill("st-matthew", "St Matthew Passion")}
               ${pill("art-of-fugue", "Art of Fugue")}
@@ -1413,14 +1604,22 @@ detailTriggers.forEach((trigger) => {
   });
 });
 
-detailOverlay?.addEventListener("click", (event) => {
+document.addEventListener("click", (event) => {
   const openButton = event.target.closest("[data-open-detail]");
 
-  if (openButton) {
+  if (!openButton) {
+    return;
+  }
+
+  if (openButton.closest("#detail-overlay")) {
     openDetail(openButton.dataset.openDetail);
     return;
   }
 
+  openDetail(openButton.dataset.openDetail, openButton);
+});
+
+detailOverlay?.addEventListener("click", (event) => {
   if (
     event.target.closest("[data-detail-close]") ||
     !event.target.closest(".detail-shell")
