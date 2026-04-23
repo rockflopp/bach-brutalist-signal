@@ -19,10 +19,38 @@
   <body>
     <div class="page-shell">
       <header class="topbar">
-        <p class="eyebrow">[ BAROQUE TRANSMISSION / UNIT JSB-1685 ]</p>
+        <p class="eyebrow">
+          <span class="eyebrow-full">[ BAROQUE TRANSMISSION / UNIT JSB-1685 ]</span>
+          <span class="eyebrow-compact">[ BAROQUE TRANSMISSION / JSB-1685 ]</span>
+        </p>
         <div class="status-block">
-          <span>MODE / SWISS INDUSTRIAL PRINT</span>
-          <span id="section-indicator">SECTOR / OVERTURE</span>
+          <span class="status-mode">MODE / SWISS INDUSTRIAL PRINT</span>
+          <div class="sector-control">
+            <span class="sector-label">SECTOR /</span>
+            <div class="sector-nav" data-sector-nav>
+              <button
+                type="button"
+                id="sector-toggle"
+                class="sector-toggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="sector-menu"
+              >
+                <span id="section-indicator" class="sector-current">OVERTURE</span>
+                <span class="sector-toggle-mark" aria-hidden="true"></span>
+              </button>
+              <div id="sector-menu" class="sector-menu" hidden>
+                <button type="button" class="sector-option is-active" data-sector-target="top">OVERTURE</button>
+                <button type="button" class="sector-option" data-sector-target="grammar">GRAMMAR</button>
+                <button type="button" class="sector-option" data-sector-target="bach">BACH CORE</button>
+                <button type="button" class="sector-option" data-sector-target="works">WORKS</button>
+                <button type="button" class="sector-option" data-sector-target="instruments">INSTRUMENTS</button>
+                <button type="button" class="sector-option" data-sector-target="listening">LISTENING</button>
+                <button type="button" class="sector-option" data-sector-target="afterlives">AFTERLIVES</button>
+                <button type="button" class="sector-option" data-sector-target="coda">CODA</button>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -821,7 +849,7 @@
         </section>
       </main>
 
-      <footer class="footer panel-grid reveal" data-sector="CODA">
+      <footer class="footer panel-grid reveal" data-sector="CODA" id="coda">
         <div
           class="panel footer-mark detail-trigger"
           data-detail="year-1750"

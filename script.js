@@ -1,5 +1,9 @@
 const sectors = document.querySelectorAll("[data-sector]");
-const indicator = document.querySelector("#section-indicator");
+const sectionIndicator = document.querySelector("#section-indicator");
+const sectorNav = document.querySelector("[data-sector-nav]");
+const sectorToggle = document.querySelector("#sector-toggle");
+const sectorMenu = document.querySelector("#sector-menu");
+const sectorOptions = document.querySelectorAll(".sector-option");
 const detailOverlay = document.querySelector("#detail-overlay");
 const detailBody = document.querySelector(".detail-body");
 const detailKicker = document.querySelector("#detail-kicker");
@@ -1531,8 +1535,8 @@ const sectorObserver = new IntersectionObserver(
       .filter((entry) => entry.isIntersecting)
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    if (visible && indicator) {
-      indicator.textContent = `SECTOR / ${visible.target.dataset.sector}`;
+    if (visible && visible.target.id) {
+      setActiveSector(visible.target.id);
     }
   },
   {
@@ -1542,6 +1546,50 @@ const sectorObserver = new IntersectionObserver(
 );
 
 let activeTrigger = null;
+
+const setSectorMenuOpen = (isOpen) => {
+  if (!sectorNav || !sectorToggle || !sectorMenu) {
+    return;
+  }
+
+  sectorNav.classList.toggle("is-open", isOpen);
+  sectorMenu.hidden = !isOpen;
+  sectorToggle.setAttribute("aria-expanded", String(isOpen));
+};
+
+const setActiveSector = (id) => {
+  const activeOption = [...sectorOptions].find(
+    (option) => option.dataset.sectorTarget === id
+  );
+
+  if (!activeOption) {
+    return;
+  }
+
+  if (sectionIndicator) {
+    sectionIndicator.textContent = activeOption.textContent.trim();
+  }
+
+  sectorOptions.forEach((option) => {
+    option.classList.toggle(
+      "is-active",
+      option.dataset.sectorTarget === activeOption.dataset.sectorTarget
+    );
+  });
+};
+
+const jumpToSection = (id) => {
+  const target = document.getElementById(id);
+
+  if (!target) {
+    return;
+  }
+
+  target.scrollIntoView({
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    block: "start",
+  });
+};
 
 const openDetail = (id, trigger = null) => {
   const detail = detailContent[id];
@@ -1587,6 +1635,20 @@ const closeDetail = () => {
     }
   }, overlayDelay);
 };
+
+setActiveSector("top");
+
+sectorToggle?.addEventListener("click", () => {
+  setSectorMenuOpen(!sectorNav?.classList.contains("is-open"));
+});
+
+sectorOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    setActiveSector(option.dataset.sectorTarget);
+    setSectorMenuOpen(false);
+    jumpToSection(option.dataset.sectorTarget);
+  });
+});
 
 sectors.forEach((section) => {
   revealObserver.observe(section);
@@ -1651,6 +1713,10 @@ afterlifePlayButtons.forEach((button) => {
 });
 
 document.addEventListener("click", (event) => {
+  if (sectorNav && !event.target.closest("[data-sector-nav]")) {
+    setSectorMenuOpen(false);
+  }
+
   const openButton = event.target.closest("[data-open-detail]");
 
   if (!openButton) {
@@ -1676,6 +1742,7 @@ detailOverlay?.addEventListener("click", (event) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
+    setSectorMenuOpen(false);
     closeDetail();
   }
 });
